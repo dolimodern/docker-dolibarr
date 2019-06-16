@@ -1,1 +1,1 @@
-docker-compose up --build -d nginx mysql workspace redis phpmyadmin
+docker-compose up --build -d php-fpm nginx mysql workspace redis phpmyadmin

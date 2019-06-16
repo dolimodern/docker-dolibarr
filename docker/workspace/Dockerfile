@@ -1030,6 +1030,14 @@ RUN if [ ${INSTALL_GNU_PARALLEL} = true ]; then \
   apt-get -y install parallel \
 ;fi
 
+# Turn off PHP Debug
+RUN phpdismod xdebug
+# Install Prestissimo
+RUN composer global require "hirak/prestissimo"
+
+
+
+
 
 ###########################################################################
 # Check PHP version:
@@ -1051,4 +1059,4 @@ RUN apt-get clean && \
     rm /var/log/lastlog /var/log/faillog
 
 # Set default work directory
-WORKDIR /var/www
+WORKDIR /var/www/projects

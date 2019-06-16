@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:1.15.12-alpine
 
 LABEL maintainer="Mahmoud Zalt <mahmoud@zalt.me>"
 
@@ -18,6 +18,12 @@ RUN apk update \
     && apk add --no-cache openssl \
     && apk add --no-cache bash \
     && adduser -D -H -u 1000 -s /bin/bash www-data
+# RUN set -x ; \
+#    addgroup -g 82 -S www-data ; \
+#    adduser -u 82 -D -S -G www-data www-data && exit 0 ; exit 1
+
+
+
 
 ARG PHP_UPSTREAM_CONTAINER=php-fpm
 ARG PHP_UPSTREAM_PORT=9000
