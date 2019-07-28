@@ -245,7 +245,7 @@ RUN if [ ${INSTALL_GMP} = true ]; then \
 USER root
 
 ARG INSTALL_SOAP=false
-
+RUN apt-get update -yqq
 RUN if [ ${INSTALL_SOAP} = true ]; then \
   # Install the PHP SOAP extension
   apt-get -y install libxml2-dev php${LARADOCK_PHP_VERSION}-soap \

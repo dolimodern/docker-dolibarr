@@ -37,6 +37,7 @@ RUN addgroup -g ${PGID} laradock && \
 
 #Install SOAP package:
 ARG INSTALL_SOAP=false
+RUN apt-get update -yqq
 RUN if [ ${INSTALL_SOAP} = true ]; then \
     docker-php-ext-install soap \
 ;fi

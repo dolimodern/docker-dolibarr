@@ -93,6 +93,7 @@ RUN if [ ${INSTALL_FAKETIME} = true ]; then \
 
 ARG INSTALL_SOAP=false
 
+RUN apt-get update -yqq
 RUN if [ ${INSTALL_SOAP} = true ]; then \
     # Install the soap extension
     rm /etc/apt/preferences.d/no-debian-php && \
